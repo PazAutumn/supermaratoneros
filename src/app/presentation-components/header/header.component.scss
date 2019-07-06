@@ -1,0 +1,193 @@
+  /*
+  *NavBar
+  */
+  
+  .navbar-default .navbar-nav > li > a {
+    color: #99D3B4;
+  }
+  
+  .navbar-default .navbar-nav > li > a:hover {
+    color: #99D3B4;
+  }
+  
+  .navbar {
+    background-color:  #222222;
+    color: #99D3B4;
+    border: none;
+  }
+  
+  .btn-sign{
+    margin-top: -20px;
+  }
+  
+  .btn-sign:hover {
+    background-color: #101010;
+    color: #99D3B4;
+  }
+  
+  .navbar-brand { 
+    position: relative; 
+    z-index: 2;
+    color: #101010;
+    padding: 0;
+  }
+  
+  .tips {
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+  }
+  
+  .navbar-nav.navbar-right .btn { 
+    position: relative; 
+    z-index: 2; 
+    padding: 4px 20px; 
+    margin: 10px auto; 
+    transition: transform 0.3s; }
+  
+  .navbar .navbar-collapse { 
+    position: relative; 
+    overflow: hidden !important;
+  }
+  .navbar .navbar-collapse .navbar-right > li:last-child { 
+    padding-left: 22px; 
+  }
+  
+  .navbar .nav-collapse { 
+    position: absolute; 
+    z-index: 1; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    margin: 0; 
+    padding-right: 120px; 
+    padding-left: 80px; 
+    width: 100%; 
+  }
+  
+  .navbar.navbar-default .nav-collapse { 
+    background-color: #222222; 
+  }
+  
+  .navbar.navbar-inverse .nav-collapse { 
+    background-color: #222222; 
+  }
+  
+  .navbar .nav-collapse .navbar-form { 
+    border-width: 0; 
+    box-shadow: none; 
+  }
+  
+  .navbar-form {
+    padding-right: 50px;
+  }
+  
+  .nav-collapse>li { 
+    float: right; 
+  }
+  
+  .btn.btn-circle { 
+    border-radius: 50px;
+    border: 2px solid gray;
+  }
+  .btn-ingresa {
+    z-index: 1;
+  }
+  
+  .btn-ingresa:hover {
+    background-color: #99D3B4;
+    color: #101010;
+    border: 2px solid #99D3B4;
+  }
+  
+  .btn.btn-outline {
+    background-color: transparent; 
+  }
+  
+  .navbar-nav.navbar-right .btn:not(.collapsed) {
+      background-color: #222222;
+      border-color: #222222;
+      color:  #99D3B4;
+  }
+  
+  .navbar.navbar-default .nav-collapse,
+  .navbar.navbar-inverse .nav-collapse {
+      height: auto !important;
+      transition: transform 0.3s;
+      transform: translate(0px,-50px);
+  }
+  
+  .navbar.navbar-default .nav-collapse.in,
+  .navbar.navbar-inverse .nav-collapse.in {
+      transform: translate(0px,0px);
+  }
+  
+  /* buscador */
+  .imgSeries {
+    border: 5px solid;
+    border-radius: 20px;
+  }
+  
+  #remove {
+    margin-left: 11em;
+    margin-top: -1em;
+  }
+  
+  
+  #custom-search-form {
+    margin: 0;
+    margin-top: 5px;
+    padding: 0;
+  }
+  
+  #custom-search-form .search-query {
+    padding-right: 3px;
+    padding-right: 4px \9;
+    padding-left: 3px;
+    padding-left: 4px \9;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 50px;
+    border: 1px solid #99D3B4;
+    -webkit-transition: width 0.2s ease-in-out;
+    -moz-transition: width 0.2s ease-in-out;
+    -o-transition: width 0.2s ease-in-out;
+    transition: width 0.2s ease-in-out;
+    background-color: #101010;
+  }
+  
+  #custom-search-form button {
+    border: 0;
+    background: none;
+    /** belows styles are working good */
+    padding: 2px 5px;
+    margin-top: 2px;
+    position: relative;
+    left: -28px;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  }
+  
+  .search-query:focus+button {
+    z-index: 3;
+  }
+  
+  .search-query:focus {
+    width: 260px;
+  }
+  
+  .li-search {
+    margin-top: 8px;
+  }
+  .navbar-nav.navbar-right .lupa {
+    z-index: 0;
+  }
+  
+  /*
+  * Fin NavBar
+  */
