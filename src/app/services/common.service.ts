@@ -14,6 +14,7 @@ export class CommonService {
     private errorKey: String;
     /**Código del error*/
     private errorCode: String;
+    public posters = Array<string>();
   /**
    * Crea una instancia de CommonFunctionsService.
    * @param {HttpClient} http
@@ -24,6 +25,16 @@ export class CommonService {
     this.map = new Map<string, any>();
     this.errorCode = '';
     this.errorKey = '';
+  }
+
+  public setSeriePosters(poster) {
+    this.posters.push(poster);
+    return this.posters;
+  }
+
+  public getSeriePosters(){
+    console.log(this.posters)
+    return this.posters;
   }
 
   /**

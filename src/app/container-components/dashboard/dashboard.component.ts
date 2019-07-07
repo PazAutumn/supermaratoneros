@@ -12,25 +12,28 @@ import 'rxjs/add/operator/takeUntil';
 })
 export class DashboardComponent implements OnInit {
   private unsubscribe$ = new Subject<void>();
-  posters: any;
 
   constructor(
     private dashboardService: DashboardService,
     private common: CommonService) { }
 
   ngOnInit() {
-    const randomMovieArray = ['Stranger Things', 'Game of Thrones', 'Narcos', 'Black mirror', 'sense8', 'Breaking Bad', 'Walking Dead', 'Silicon Valley', 'Mindhunter', 'Designated Survivor', 'Scream Queens', 'Dexter', 'Glee', 'Big Bang Theory', 'Modern Family', 'True Blood'];
-    this.dashboardService.callAPI('s=', encodeURI(randomMovieArray[2]))
-    .takeUntil(this.unsubscribe$)
-    .subscribe(
-    (data) => {
-      this.posters = data.Poster;
-      this.getDataOk(data.payload);
-    },
-    (error) => {
-      this.getDataNotOk(error);
-    });
-  }
+    const randomSeriesArray = ['Stranger Things', 'Game of Thrones', 'Narcos', 'Black mirror', 'sense8', 'Breaking Bad', 'Walking Dead', 'Silicon Valley', 'Mindhunter', 'Designated Survivor', 'Scream Queens', 'Dexter', 'Glee', 'Big Bang Theory', 'Modern Family', 'True Blood'];
+    randomSeriesArray.map((serie) => {
+      this.dashboardService.getSerieInfo(serie)
+      .takeUntil(this.unsubscribe$)
+      .subscribe(
+      (data) => {
+        this.getDataOk(data);
+        console.log(data);
+      },
+      (error) => {
+        this.getDataNotOk(error);
+      });
+    })  
+    
+      
+    }
 
   /**
    * se des-suscribe del elemento
@@ -47,6 +50,7 @@ export class DashboardComponent implements OnInit {
    * @param data
    */
   getDataOk(data) {
+    this.common.setSeriePosters(data.Poster);
     console.log('llamada ok')
   }
 
