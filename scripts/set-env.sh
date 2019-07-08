@@ -24,6 +24,7 @@ echo "export const environment = {" > $TARGET_PATH
 echo "ambiente: '${ENV}'," >> $TARGET_PATH
 echo "production: ${ISPROD}," >> $TARGET_PATH
 echo "urlApi: '${URL_API}'," >> $TARGET_PATH
+echo "urlFirebase: '${URL_FIREBASE}'," >> $TARGET_PATH
 echo "timeout : ${TIMEOUT}" >> $TARGET_PATH
 
 echo "};" >> $TARGET_PATH

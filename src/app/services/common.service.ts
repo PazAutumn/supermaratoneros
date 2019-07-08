@@ -15,6 +15,10 @@ export class CommonService {
     /**Código del error*/
     private errorCode: String;
     public posters = Array<string>();
+    public series = Array<any>();
+    public serie: object;
+    currentSerie = new BehaviorSubject(this.serie);
+    currentSerie$ = this.currentSerie.asObservable();
   /**
    * Crea una instancia de CommonFunctionsService.
    * @param {HttpClient} http
@@ -25,6 +29,25 @@ export class CommonService {
     this.map = new Map<string, any>();
     this.errorCode = '';
     this.errorKey = '';
+  }
+
+  /**
+   * @method updateCurrentSerie
+   * @description Funcion que actualiza el objeto cliente para toda a app
+   * @param client
+   */
+  public updateCurrentSerie(): void {
+    this.currentSerie.next(this.serie);
+  }
+
+  public setSeries(data){
+    this.series.push(data);
+    return this.series
+  }
+
+  public getSeries(){
+    console.log(this.series)
+    return this.series;
   }
 
   public setSeriePosters(poster) {
@@ -89,6 +112,14 @@ export class CommonService {
    */
   public setErrorKey(errorKey: string): void {
     this.errorKey = errorKey;
+  }
+
+  public setCurrentSerie(serie): any{
+    this.serie = serie;
+  }
+
+  public getCurrentSerie() {
+    return this.serie;
   }
   /**
    * @method getErrorKey

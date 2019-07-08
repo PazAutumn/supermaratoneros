@@ -16,6 +16,8 @@ import { CarouselComponent } from './presentation-components/carousel/carousel.c
 import { InformationComponent } from './presentation-components/information/information.component';
 import { FooterComponent } from './presentation-components/footer/footer.component';
 import { CommonService } from './services/common.service';
+import { ModalComponent } from './presentation-components/modal/modal.component';
+import { FeedbackComponent } from './presentation-components/feedback/feedback.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -32,14 +34,16 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     LoginComponent,
     CarouselComponent,
     InformationComponent,
-    FooterComponent
+    FooterComponent,
+    ModalComponent,
+    FeedbackComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,  
     SwiperModule,
     HttpModule,
-    HttpClientModule,       
+    HttpClientModule
   ],
   providers: [
     CommonService,
