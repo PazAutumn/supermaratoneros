@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -6,10 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  @ViewChild('modalContent') modalContent;
+  @ViewChild('modal') modal;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  search(): void {
+    this.modalContent.title_modal = "Busca tu serie"
+    this.modal.toggleModal();
+    this.modalContent.typeDisplay = 'modal';
+  }
+
+  closeModal() {
+    this.modal.toggleModal();
   }
 
 }

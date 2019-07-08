@@ -13,14 +13,16 @@
         	</div>
         </div>
         <div class="row">
-          <div class="col-xs-6 col-lg-6">
-            <a href="#" class="btn btn-default comienza" data-toggle="modal" data-target="#btn-signin">Inicia sesión</a>
-          </div>
-          <div class="col-xs-6 col md-6">
-            <a href="#" class="btn btn-default comienza" data-toggle="modal" data-target="#btn-signup">Registrate</a>
+          <div class="col-xs-12 col-lg-12">
+            <button class="btn btn-default comienza" (click)="search()">Busca tu serie</button>
           </div>
          </div>
       </div>
 		</div>
 	</div>
 </section><!-- /.Fin sección reto -->
+
+<!-- modal dinámico -->
+<app-modal #modal>
+  <app-feedback (closeModalSignal)="closeModal()" [typeDisplay]="typeDisplay" #modalContent></app-feedback>
+</app-modal>

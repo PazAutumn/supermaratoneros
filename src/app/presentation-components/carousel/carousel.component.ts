@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, Input, Output, EventEmitter } from '@angu
 import { SwiperComponent, SwiperDirective, SwiperConfigInterface,
   SwiperScrollbarInterface, SwiperPaginationInterface } from 'ngx-swiper-wrapper';
 import { CommonService } from '../../services/common.service';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-carousel',
@@ -9,7 +10,12 @@ import { CommonService } from '../../services/common.service';
   styleUrls: ['./carousel.component.scss']
 })
 export class CarouselComponent implements OnInit {
+  private unsubscribe$ = new Subject<void>();
+  @ViewChild('feedback') feedback;
+  @ViewChild('modalContent') modalContent;
+  @ViewChild('modal') modal;
   @Input() posters: any;
+  currentSerie: object;
   /* Carousel vars */
   public show = true;
   public type= 'component';
@@ -28,7 +34,7 @@ export class CarouselComponent implements OnInit {
     loop: true,
     mousewheel: true,
     scrollbar: false,
-    slidesOffsetBefore: 1,
+    slidesOffsetBefore: 0,
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
@@ -47,7 +53,19 @@ export class CarouselComponent implements OnInit {
   constructor(private common: CommonService) { }
 
   ngOnInit() {
-      this.posters = this.common.getSeriePosters();
+      this.posters = this.common.getSeries();
+      console.log(this.posters);
+  }
+
+  information(poster) {
+    this.modal.toggleModal();
+    this.modalContent.title_modal = poster.Title;
+    this.modalContent.currentSerie = poster;
+    this.modalContent.typeDisplay = 'modal';
+  }
+
+  closeModal() {
+    this.modal.toggleModal();
   }
 
 }

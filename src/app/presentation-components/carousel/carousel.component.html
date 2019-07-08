@@ -6,7 +6,7 @@
       <swiper *ngIf="type == 'component' && show" class="swiper-container" [config]="config" [disabled]="disabled" fxFlex="auto">
         <div *ngFor="let poster of posters" class="swiper-slide">
           <!-- Posters-->
-          <img class="poster" [src]="poster">
+          <img class="poster" (click)="information(poster)" [src]="poster.Poster">
           <!--Fin posters-->
         </div>
       </swiper>
@@ -15,3 +15,8 @@
   <!--/FIN carousel -->
 </section>
 <!--/FIN Sección carousel -->
+
+<!-- modal dinámico -->
+<app-modal #modal>
+  <app-feedback (closeModalSignal)="closeModal()" [typeDisplay]="typeDisplay" #modalContent></app-feedback>
+</app-modal>

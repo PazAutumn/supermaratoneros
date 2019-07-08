@@ -1,0 +1,47 @@
+<!-- Contenido del modal -->
+<div class="modal-body">
+  <!-- Texto dinámico -->
+  <!-- Titulo del modal -->
+  <h4 class="modal-title"><b>{{title_modal}}</b></h4>
+  <br>
+  <div class="content1">
+    <div *ngIf="title_modal !== 'Busca tu serie'">
+      <div class="text-center">
+        <img class="modal-poster" [src]="currentSerie.Poster">
+      </div>
+      <ul>
+        <li><strong>Año de emisiòn:</strong> {{currentSerie.Year}}</li>
+        <li><strong>Genero:</strong> {{currentSerie.Genre}}</li>
+        <li><strong>Fecha de estreno:</strong> {{currentSerie.Released}}</li>
+        <li><strong>Numero de temporadas:</strong> {{this.currentSerie.totalSeasons}}</li>
+        <li><strong>Actores:</strong> {{this.currentSerie.Actors}}</li>
+        <li><strong>Idioma:</strong> {{this.currentSerie.Language}}</li>
+      </ul>
+    </div>
+    <div *ngIf="title_modal === 'Busca tu serie'">
+      <div class="span12">
+        <div id="custom-search-form" class="form-search form-horizontal">
+          <div class="input-append span12">
+            <input id="search" type="text" class="search-query mac-style" placeholder="Encuentra tu Serie" #input>
+            <button (click)="search()" ng-keyup="$event.keyCode == 13 ? search() : null" class="btn lupa"><i class="glyphicon glyphicon-search"></i></button>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="posterSearch !== undefined" class="text-center">
+        <img class="modal-poster" [src]="posterSearch.Poster">
+      </div>
+      <div *ngIf="posterSearch !== undefined">
+        <li><strong>Nombre:</strong> {{posterSearch.Title}}</li>
+        <li><strong>Año de emision:</strong> {{posterSearch.Year}}</li>
+        <li><strong>Genero:</strong> {{posterSearch.Type}}</li>
+      </div>
+    </div>
+  </div>
+    
+<div class="text-center">
+  <!-- Botón cancelar temporal ! -->
+  <div>
+    <!-- Botón cancelar temporal ! -->
+    <button (click)="shouldCloseModal()" class="btn button--secondary">Cerrar</button>
+  </div>
+</div>
