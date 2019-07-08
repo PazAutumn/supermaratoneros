@@ -1,0 +1,17 @@
+<!-- Sección carousel -->
+<section class="carousel">
+  <!--carousel -->
+  <div class="vertical-container" fxLayout="column" fxLayoutAlign="center center" fxFlex="50%">
+    <div class="content-container" fxLayout="column" fxLayoutAlign="center center" fxFlex="auto">
+      <swiper *ngIf="type == 'component' && show" class="swiper-container" [config]="config" [disabled]="disabled" fxFlex="auto">
+        <div *ngFor="let poster of posters" class="swiper-slide">
+          <!-- Posters-->
+          <img class="poster" [src]="poster">
+          <!--Fin posters-->
+        </div>
+      </swiper>
+    </div>
+  </div>
+  <!--/FIN carousel -->
+</section>
+<!--/FIN Sección carousel -->

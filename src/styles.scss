@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body {
+    background-color: #101010;
+    font-family: 'Roboto Condensed', sans-serif !important;
+    font-weight: 300;
+  }
+
+.container-fluid {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
